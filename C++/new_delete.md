@@ -7,7 +7,7 @@ char* str = (char*)malloc(sizeof(char)*n); //char타입의 메모리를 n 개생
 
 free(str);
 ```
-* C++ 에서는 new 연산자를 사용해 조금 더 간결하게 메모리를 할당하고 수 있다.
+* C++ 에서는 new 연산자를 사용해 조금 더 간결한 코드로 동적 메모리를 할당할 수 있다.
 * 해제는 free 대신에 delete 연산자를 사용한다.
 ```c++
 char* str = new char[n]; 
