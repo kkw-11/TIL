@@ -65,6 +65,7 @@
                 }
             }
         },
+        
         // // 바이너리 실행(Windows)
         {
             "label": "execute",
