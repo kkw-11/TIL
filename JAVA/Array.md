@@ -11,13 +11,13 @@
   score = new int[5]; //배열을 생성(실제 메모리 저장공간 생성)
   ```
   
-  ### int[] score;
+  #### int[] score;
   
   * int형 배열 참조변수 score를 선언한다. 데이터를 저장할 수 있는 공간은 아직 마련되지 않았다.
     
       ![image](https://user-images.githubusercontent.com/76929823/120874047-b7fb2300-c5df-11eb-936f-cf2039caf918.png)
   
-  ### score = new int\[5];
+  #### score = new int\[5];
   
   * 연산자 'new'에 의해서 메모리의 빈 공간에 5개의 int형 데이터를 저장할 수 있는 공간이 마련된다.
    ![image](https://user-images.githubusercontent.com/76929823/120874099-f09afc80-c5df-11eb-8af1-19a40fcfe18d.png)
