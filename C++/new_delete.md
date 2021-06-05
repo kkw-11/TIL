@@ -1,6 +1,6 @@
 # C++의 동적 메모리 할당과 해제
 
-## new&delete
+## new&delete 연산자
 * C언어에서는 동적 메모리를 할당하기 위해서는 malloc, free 함수를 사용했다.
 ```c++
 char* str = (char*)malloc(sizeof(char)*n); //char타입의 메모리를 n 개생성하고 생성된 메모리의 첫 번째 주소를 포인터변수에 저장(=)한다.e
