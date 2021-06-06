@@ -202,12 +202,53 @@
 ## 리눅스 프로세스 동기화 프로그래밍
 ### sem_init
 * 세마포어는 아음과 같이 선언된 sem_init 함수를 통해 생성됨
-```linux
-#include <semaphore.h
+```C
+#include <semaphore.h>
  int sem_init(sem_t *sem, int pshared, unsigned int value);
 ```
 * sem이 가리키는 세마포어 오브젝트를 초기화하고 공유 옵션을 설정하여 초기 저수값을 줌
 * pshared 파라미터는 세마포어의 형태를 제어함
     * pshared의 값이 0이면, 세마포어는 현재 프로세스에 지역적임
     * 그렇지 않으면, 세마포어는 프로세스간에 공유될 수 있음
+
 ### sem_post, sem_wait
+* sem_post
+    * 세마포어의 값을 1 증가시킴
+* sem_wait
+    * 세마포어의 값을 1 감소시키지만, 항상 세마포어가 0이 아닌 카운트를 가질 때까지 기다림
+        * 예) 0의 값을 가지는 세마포어에서 sem_wait를 호출하면 함수는 다른 어떤 스레드(프로세스 안의 작은 코드의 덩어리)가 세마포어의 값을 증ㄱ시킬 때 까지 기다림
+        
+        ```C
+        #include <semaphore.h>
+        int sem_post(sem_t* sem);
+        int sem_wait(sem_t* sem);
+        ```
+
+## 리눅스 파일 시스템 프로그래밍
+* chmod
+    * 파일이나 디렉토리에 대한 허용 권한을 변경함 (path에 지저오딘 파일은 mode에 주어진 허용 권한을 가지도록 변경됨)
+    ```C
+    #include <sys/stat.h>
+    int chmod(const char* path, mode_t mode);
+    ```
+* chown
+    * 파일의 소유자를 변경함
+    ```c
+    int chown(const char* path, uid_t owner, gid_t group);
+    ```
+
+* unlink 
+    * 파일을 제거함
+
+* link
+    * 기존의 path1에 대한 새로운 링크를 생성하고, 새로운 디렉토리 항목은 path2에 의해 지정됨
+
+* symlink
+    * 기호링크를 생성함
+    ```c
+    #include <unistd.h>
+    int unlink(const char* path);
+    int link(ocnst char* path1, const char* path2);
+    int symlink(ocnst char* path1, const chat* path2);
+    ```
+
