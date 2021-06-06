@@ -322,3 +322,4 @@
 * 리눅스 커널 외에 GNU 유틸리티, 개발환경, X 윈도우 시스템 등을 포함함
 * 레드햇 리눅스 배포판
     * Redhat Linux, RedHat Enterprise Linux, Fedora Core    
+![image](https://user-images.githubusercontent.com/76929823/120944115-b3fd0b80-c76d-11eb-9edd-4f3da04bd26e.png)
