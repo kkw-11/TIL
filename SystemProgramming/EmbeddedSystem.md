@@ -158,7 +158,11 @@
 * 시스템과 외부장치들을 연결함
 * 임베디드 시스템의 경우는 응용 목적에서 필요로 하는 제한된 주변장치를 호용함
 ### PC 하드웨어 VS 임베디드 하드웨어
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/76929823/120942875-94161980-c766-11eb-856f-49e12184b1c6.png)
+
+### 구성요소
+![image](https://user-images.githubusercontent.com/76929823/120942890-aa23da00-c766-11eb-924f-c438bdeedadf.png)
+
 
 ## 임베디드 시스템 프로그래밍
 ## 임베디드 시스템 리눅스
