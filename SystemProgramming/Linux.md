@@ -63,4 +63,6 @@
     * 동기화 문제를 해결하는 일발적인 방법이 세마포어(semaphore)
 * 세마포어(semaphore)
     * 초기상태의 변수값은 자원의 수와 같고, 대기열은 비어 있음
-    
+
+![image](https://user-images.githubusercontent.com/76929823/120909265-4fc74280-c6ae-11eb-979a-8e88e2b4089e.png)
+
