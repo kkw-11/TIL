@@ -57,6 +57,7 @@
     * 언제 어디서나 어떤 것이라도 온라인 네트워크와 연결되어 서비스를 받는 환경과 공간을 의미함, 공간개념의 변화
     * xerox사 PARC(Palo Alto Research Center) 연구소의 연구책임자인 마크와이저(mark weiser)소장에 의해 1991년도에 사용됨
     * TRON 프로젝트 연구책임자인 사카무라 켄 교수가 '모든 물건에 컴퓨터'라고 주장한 것이 시작임
+    ![image](https://user-images.githubusercontent.com/76929823/120941475-f0287000-c75d-11eb-9a46-ab84dacde3bd.png)
 
 ## 임베디드 시스템 소픝웨어
 ## 임베디드 시스템 하드웨어
