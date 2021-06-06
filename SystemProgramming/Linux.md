@@ -117,7 +117,8 @@
     * 부모 프로세스, 형제(sibling, 부모가 같은 프로세스들) 프로세스, 자신의 자식(child) 프로세스
  
 
-image 자리
+![image](https://user-images.githubusercontent.com/76929823/120910531-a63a7e00-c6ba-11eb-84d1-f53f136e6935.png)
+
 
  ## 프로세서 관리
 * 작업 스케줄링(job scheduling)
@@ -133,10 +134,11 @@ image 자리
 * 프로세스 스케줄링(process cheduling)
     * 다음에 수행될 프로세스를 선정함
         * 프로세스 스케줄러, 디스페처(dispatcher): 준비 리스트에서 다음 수행될 프로세스를 결정함
-        * image 자리 (비선점형)
+       ![image](https://user-images.githubusercontent.com/76929823/120910526-a2a6f700-c6ba-11eb-9322-4a8ea92d1117.png)
+
 
 * 스케줄링 정책 - 스케줄러에 포함된 일련의 선정 규칙
 * 작업 스케줄링 정책 - 다음의 입력 작업을 선정하기 위한 규칙
 * 프로세스 스케줄링 정책 - 다음에 수행될 프로세스 선정에 관한 규칙
+![image](https://user-images.githubusercontent.com/76929823/120910546-b5b9c700-c6ba-11eb-835c-615e441f543b.png)
 
-* 스케줄링 정책의 종류
