@@ -274,3 +274,5 @@
             * 통신 프로토콜 및 패킷
         * 물리적 자원에 대응되지 않는 추상적 객체
             * 보안 혹은 사용자 계정에 따른 접근 제어 등
+
+![image](https://user-images.githubusercontent.com/76929823/120943796-1b19c080-c76c-11eb-989f-31c503f295b9.png)
