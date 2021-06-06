@@ -199,3 +199,15 @@
    
    ![image](https://user-images.githubusercontent.com/76929823/120911011-8311cd80-c6be-11eb-81b6-090f2e86a3f8.png)
 
+## 리눅스 프로세스 동기화 프로그래밍
+### sem_init
+* 세마포어는 아음과 같이 선언된 sem_init 함수를 통해 생성됨
+```linux
+#include <semaphore.h
+ int sem_init(sem_t *sem, int pshared, unsigned int value);
+```
+* sem이 가리키는 세마포어 오브젝트를 초기화하고 공유 옵션을 설정하여 초기 저수값을 줌
+* pshared 파라미터는 세마포어의 형태를 제어함
+    * pshared의 값이 0이면, 세마포어는 현재 프로세스에 지역적임
+    * 그렇지 않으면, 세마포어는 프로세스간에 공유될 수 있음
+### sem_post, sem_wait
