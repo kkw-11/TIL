@@ -17,7 +17,7 @@ delete []str; //동적 할당한 메모리 해제 free함수와 같음
 ```c++
 int* prt1 = enw int; //int형 변수 할당
 double* prt2 = new dopuble; //double형 변수 할당
-int* arr1 = new int[3] // 길이가 3인 int형 배열의 할당
+int* arr1 = new int[3] // 길이가 3인 int형 배열의 할당g
 double* arr2 = new double[7] // 길이가 7인 double 형 배열의 할당
 
 
