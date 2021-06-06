@@ -190,9 +190,12 @@
              1024+0 records out
              $
     ```
-    image
+   ![image](https://user-images.githubusercontent.com/76929823/120911008-7ab99280-c6be-11eb-9d00-9b3c134b8c07.png)
+    
     * 스왑 파티션 생성
         * 다음 사항을 제외하고는 다른 파티션과 동일함
             * 스왑 파티션에는 어떤 파일시스템도 사용되지 않으며, 본래의 파티션(raw partition)을 그대로 사용함
             * 스왑용으로 쓸 파티션은 type 82로 지정해 두는 것이 좋음 -> 파티션의 용도가 명확해짐
+   
+   ![image](https://user-images.githubusercontent.com/76929823/120911011-8311cd80-c6be-11eb-81b6-090f2e86a3f8.png)
 
