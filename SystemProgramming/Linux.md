@@ -42,3 +42,5 @@
 * 실행(running) - 현재 프로세스가 실행되고 있는 상태
 * 대기(waiting) - 입,출력 프로세스의 작업이 완료되기를 기다리는 상태
 * 준비(ready) - 프로세스의 배당을 기다리는 상태
+
+![image](https://user-images.githubusercontent.com/76929823/120909084-36bd9200-c6ac-11eb-912a-ad8fea22b360.png)
