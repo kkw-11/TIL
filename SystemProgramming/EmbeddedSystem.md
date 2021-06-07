@@ -364,6 +364,5 @@
 * 부팅 : 리눅스 시스템에 전원 버튼을 누른 후부터 로그인 프롬프트나 X 윈도우 화변이 나타날때 까지의 과정
 * 리눅스 부팅 과정
 * ROM BIOS에 의하여 시스템의 아상 유무를 점검하고 하드웨어를 
-=======
-![image](https://user-images.githubusercontent.com/76929823/120944115-b3fd0b80-c76d-11eb-9edd-4f3da04bd26e.png)
->>>>>>> 9b60f18730fc0709fd217c2b44f8304950201e80
+![image](https://user-images.githubusercontent.com/76929823/120944817-6a162480-c771-11eb-8881-3af5bcde416a.png)
+
