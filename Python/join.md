@@ -18,6 +18,7 @@ res = ''.join(strA)
 
 print(res)
 ```
+![image](https://user-images.githubusercontent.com/76929823/121509213-5f81b680-ca21-11eb-82a5-2929fc28ecf0.png)
 
 
 ```python
@@ -26,3 +27,5 @@ res2 = ''.join(map(str,intA))
 
 print(res2)
 ``` 
+
+![image](https://user-images.githubusercontent.com/76929823/121509150-51339a80-ca21-11eb-9246-9787d328ddbf.png)
