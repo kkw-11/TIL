@@ -22,3 +22,17 @@ permutaion(0)
 
 
 print(res_arr)
+
+dict_zoro = {}
+person = {'name':'Michael','age':10}
+
+#딕셔너리에서 자료 꺼내기
+print(person['name']) # Michael 
+print(person['age']) # 10
+
+#딕셔너리에 자료 추가하기
+person['hometown'] = 'Seoul'
+
+#del 함수로 딕셔너리에서 원소 삭제
+del person['age']
+print(person) # 

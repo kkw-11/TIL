@@ -29,3 +29,11 @@ print(res2)
 ``` 
 
 ![image](https://user-images.githubusercontent.com/76929823/121509150-51339a80-ca21-11eb-9246-9787d328ddbf.png)
+
+```python
+Seeing = 1
+Believing =2
+my_list = [Seeing, 'is', Believing]
+
+var2 = " ".join(map(str,my_list)) # join의 매개변수로는 문자열 요소로만 구성된 리스트가 있어야 각 문자열 요소들을 합쳐서 문자열을 만들어 낼 수 있다. 그렇게 하기 위해서 map 함수를 통해 리스트의 각 요소들을 string으로 매핑해주어야 한다.
+```
