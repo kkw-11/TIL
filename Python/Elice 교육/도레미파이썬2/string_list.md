@@ -25,6 +25,7 @@ print(my_seq.count(2)) # 3
     * c를 기준으로 문자열을 쪼개서 리스트 반환 (괄호 비울시 공백 기준)
 ```python
 my_str = "1 2 3 4 5"
+my_str.split() # "1 2 3 4 5" -> ['1','2','3','4','5']
 print(my_str.split()) #['1','2','3','4','5']
 
 element = "Na,Mg,Al,Si"
@@ -70,4 +71,20 @@ print(var1)
 my_list = ["Seeing", "is", "Believing"]
 var2 = " ".join(my_list)
 print(var2)
+```
+
+```python
+'''
+공백으로 구분된 5개의 숫자문자열을 쪼개서 리스트에 저장하고, 저장된 리스트의 각 요소를 5개의 변수에 int형으로 저장하기
+
+'''
+
+str1 = "11 22 33 44 55"
+list1 = str1.split()
+print(list1) # ['11', '22', '33', '44', '55']
+print(type(list1[0])) # <class 'str'>
+a,b,c,d,e = map(int, list1) # 인덱스마다 저장된 각각의 요소(str 타입)를 int 타입으로 mapping하여 a,b,c,d,e에 저장하기
+
+print(a,b,c,d,e) # 11 22 33 44 55
+
 ```
