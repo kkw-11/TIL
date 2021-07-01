@@ -69,3 +69,17 @@ def DFS(graph, vertex,visited):
 DFS(graph,1,visited)
 
 '''
+
+n_nodes = 7
+myInput = []
+
+adj_list = [None] * (n_nodes + 1) # 7 x 7인데 0인덱스는 사용하지 않기 때문에 (7 + 1)
+print(adj_list)
+
+for i in range(1, n_nodes + 1):
+    adj_list[i] = []
+print(adj_list)
+# for a, b in myInput:
+#     # print('a:', a, 'b:', b)
+#     adj_list[a].append(b)
+#     adj_list[b].append(a)
