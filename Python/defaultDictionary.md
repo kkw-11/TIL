@@ -7,6 +7,7 @@ dic1 = dict()
 print(dic1['a'])
 
 ```
+
 * 그리고 없는 key값에 append를 이용해 리스트 value를 추가하는 행위는 할 수 없다.
 ```python
 dic1 = dict()
