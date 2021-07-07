@@ -9,3 +9,6 @@
     * HTML 문서를 조작하고 접근하는 표준화된 방법, 모든 HTML 요소는 HTML DOM을 통해 접근 가능
 * XML DOM: 문서를 위한 DOM 모델
     * XML 문서에 접근하여 그 문서를 다루는 표준화된 방법, 모든 XML 요소는 XML DOM을 통해 접근 가능
+
+## Document 객체
+* Document 객체는 웹 페이지를 의미한다. 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시!! Document 객체부터 시작해야 한다.
