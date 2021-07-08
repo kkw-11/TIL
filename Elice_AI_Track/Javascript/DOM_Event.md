@@ -14,3 +14,7 @@
 * Document 객체는 웹 페이지를 의미한다. 웹 페이지에 존재하는 HTML 요소에 접근하고자 할 때는 반드시!! Document 객체부터 시작해야 한다.
 
 ![image](https://user-images.githubusercontent.com/76929823/124714731-1861e500-df3d-11eb-9646-6ad5575fce10.png)
+
+
+## Node 객체
+* 
