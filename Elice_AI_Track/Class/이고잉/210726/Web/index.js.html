@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            data=[
+                { id: 1, title: "html", description: "html is..." },
+                { id: 2, title: "css", description: "css is..." },
+                { id: 3, title: "js", description: "js is..." },
+                {id: 4, title: "react", description: "react is..."}
+            ]
+            selected_id = null;
+            function refreshNav(){
+                var navTag = '';
+                for(var i=0; i<data.length; i++){
+                    navTag += `
+                        <li>
+                            <a href="#" onclick="refreshArticle(${data[i].id});">
+                                ${data[i].title}
+                            </a>
+                        </li>
+                    `;
+                }
+                document.querySelector('#nav').innerHTML = navTag;    
+            }            
+            function refreshArticle(id){
+                var title = 'Welcome';
+                var desc = 'Hello, WEB';
+                if(id !== null){
+                    for(var i=0; i<data.length; i++){
+                        if(data[i].id === id){
+                            title = data[i].title;
+                            desc = data[i].description;
+                        }
+                    }
+                }
+                var articleTag = `
+                    <h2>${title}</h2>
+                    ${desc}
+                `;
+                document.querySelector('article').innerHTML = articleTag;    
+            }
+        </script>
+        <header>
+            <h1><a href="#" onclick="refreshArticle()">WEB</a></h1>
+        </header>
+        <nav>
+            <ul id="nav">
+                
+            </ul>
+        </nav>
+        <article>
+
+        </article>
+        <script>            
+            refreshNav();
+            refreshArticle('Welcome', 'Hello, WEB');
+        </script>
+    </body>
+</html>
