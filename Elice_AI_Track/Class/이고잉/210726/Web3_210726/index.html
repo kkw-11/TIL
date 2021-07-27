@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            data=[
+                { id: 1, title: "html", description: "html is..." },
+                { id: 2, title: "css", description: "css is..." },
+                { id: 3, title: "js", description: "js is..." }
+            ]
+            function getData(id){
+                for(var i=0; i<data.length; i++){
+                    if(data[i].id === id){
+                        return data[i];
+                    }
+                }
+            }
+            function refreshNav(){
+                var navTag = '';
+                for(var i=0; i<data.length; i++){
+                    navTag = navTag + `<li>
+                        <a 
+                            href="${data[i].id}.html"
+                            onclick="
+                                event.preventDefault();
+                                // 1. id 값을 알아낸다. 
+                                var id = ${data[i].id};
+                                // 2. id 값과 일치하는 데이터를 data 배열 안에서 찾아내야 한다. 
+                                var data = getData(id);
+                                // 3. setArticle()을 이용해서 title, desc 값을 변경해준다. 
+                                setArticle(data.title, data.description);
+                            "
+                        >${data[i].title}</a>
+                    </li>`;
+                }
+                document.querySelector('#nav').innerHTML= navTag;
+            }
+            function setArticle(title, description){
+                document.querySelector('article').innerHTML =`<h2>${title}</h2>${description}`;
+            }
+            function init(){
+                refreshNav();
+                setArticle('welcome', 'hello, WEB');
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>
+                <a href="index.html" onclick="
+                    event.preventDefault();
+                    setArticle('Welcome', 'Hellooooo, WEB');
+                ">WEB</a>
+            </h1>
+        </header>
+        <nav>
+            <ol id="nav">
+            </ol>
+        </nav>
+        <article></article>
+        <script>
+            init();
+        </script>
+    </body>
+</html>

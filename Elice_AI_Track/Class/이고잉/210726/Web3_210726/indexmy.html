@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        data=[
+                { id: 1, title: "html", description: "html is..." },
+                { id: 2, title: "css", description: "css is..." },
+                { id: 3, title: "js", description: "js is..." }
+            ]
+
+            function getData(id){
+                for(var i=0; i<data.length; i++){
+                    if(data[i].id === id){
+                        return data[i];
+                    }
+                }
+            }
+
+        function refreshNav(){
+            var navTag = '';
+            for(var i=0; i<data.length; i++){
+            navTag = navTag + `<li>
+                    <a 
+                        href="${data[i].id}.html"
+                        onclick=" 
+                            event.preventDefault();
+                            var id = ${data[i].id};
+                            console.log('id', id) ;  
+                            // document.write(id);
+
+                        "
+                        console.log(getData(id));
+                        data = getData(id);
+                        setArticle(data.title, data.description);
+                    >${data[i].title}</a>
+                </li>`;
+            }
+            document.querySelector('#nav').innerHTML= navTag;
+         }
+
+        function setArticle(title, description){
+            document.querySelector('article').innerHTML = `<h2>${title}</h2>${description}`;
+        }
+
+        function init(){
+            refreshNav();
+            setArticle('welcome','hello, Web');
+        }      
+    </script>
+</head>
+<body>
+    <header>
+        <a href="index.html" onclick =" 
+            event.preDefault();
+            init()">WEB</a>
+    </header>
+
+    <nav>
+        <ol id="nav">
+          
+        </ol>
+
+    </nav>
+
+    <article> </article>
+
+    <script>
+          
+        init();
+
+    </script>
+
+</body>
+</html>
