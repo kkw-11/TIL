@@ -16,7 +16,9 @@ def home():
 # 가게의 정보를 출력하기 위한 부분이에요.
 @bp.route('/store/<int:store_id>/')
 def store_detail(store_id):
-    pass
+    store_info = rabbitStore.query.filter(rabbitStore.id == store_id).first()
+
+    return render_template('store_detail.html', store_info = store_info)
 
 
 # 로그인 아주 중요하죠.
