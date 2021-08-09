@@ -1,7 +1,8 @@
-from flask import Blueprint, render_template, request, url_for, session, flash, redirect
+from flask import Blueprint, render_template, request, url_for, session, flash, redirect, jsonify
 from models import *
 # from bcrypt import hashpw, checkpw, gensalt
 from werkzeug.security import generate_password_hash, check_password_hash
+import requests
 
 bp = Blueprint('main', __name__, url_prefix='/')
 
@@ -17,8 +18,10 @@ def home():
 @bp.route('/store/<int:store_id>/')
 def store_detail(store_id):
     store_info = rabbitStore.query.filter(rabbitStore.id == store_id).first()
+    store_menu = rabbitMenu.query.filter(rabbitMenu.store_id == store_id).all()
+    reviews = rabbitReview.query.filter(rabbitReview.store_id == store_id).all()
 
-    return render_template('store_detail.html', store_info = store_info)
+    return render_template('store_detail.html', store_info = store_info, store_menu=store_menu, review_info=reviews)
 
 
 # 로그인 아주 중요하죠.
@@ -88,17 +91,80 @@ def register():
 # user_id, store_id, 나머지 두개을 어떤 식으로 받는지 잘 체크하세요.
 @bp.route('/write_review/<int:store_id>/', methods=('POST',))
 def create_review(store_id):
-    pass
+    rating = int(request.form['star'])
+    content = request.form['review']
+
+    review = rabbitReview(user_id =session['user_id'], store_id = store_id, rating=rating, content=content)
+    db.session.add(review)
+    db.session.commit()
+
+    flash("리뷰가 성공적으로 작성되었습니다.")
+    return redirect(f'/store/{store_id}')
+    # return redirect(url_for('main.store_detail',store_id= store_id))
+
 
 # 리뷰 삭제입니다.
 # 리뷰 삭제를 위해선 일단 이 리뷰가 해당 유저가 쓴게 맞는지,
 # 이 리뷰가 그 가게의 리뷰가 맞는지 확인해야 합니다.
 @bp.route('/delete_review/<int:store_id>/<int:review_id>')
 def delete_review(store_id, review_id):
-    pass
+    review_info = rabbitReview.query.filter(rabbitReview.id == review_id).first()
+    store_info = rabbitStore.query.filter(rabbitStore.id == store_id).first()
+
+    if review_info.user_id != session['user_id']:
+        flash("삭제할 권한이 없습니다.")
+    elif review_info.store_id != store_info.id:
+        flash("잘못된 요청입니다.")
+    else:
+        db.session.delete(review_info)
+        db.session.commit()
+        flash("삭제가 완료되었습니다.")
+        
+        
 
 # 마이 페이지라고 써있지만, 사실 그냥 개인정보 수정용이에요!
 # 다만, 로그인을 한 유저만 접근할 수 있도록 해야겠죠?
 @bp.route('/mypage', methods=('POST', 'GET'))
 def update_info():
     pass
+
+
+@bp.route('/kakao')
+def kakao_login():
+    client_id = 'fe8afea007be64a298c41c191f0e5daa'
+    redirect_uri = 'http://localhost:1234/kakao/callback'
+    return redirect(f"https://kauth.kakao.com/oauth/authorize?client_id={client_id}&redirect_uri={redirect_uri}&response_type=code")
+
+@bp.route('/kakao/callback')
+def kakao_login_process():
+    code = request.args.get("code")
+    client_id = 'fe8afea007be64a298c41c191f0e5daa'
+    redirect_uri = 'http://localhost:1234/kakao/callback'
+
+    token_request = requests.get(
+        f"https://kauth.kakao.com/oauth/token?grant_type=authorization_code&client_id={client_id}&redirect_uri={redirect_uri}&code={code}"
+    )
+
+    token_json = token_request.json() # 돌아온 결과물에서 json 데이터만 빼온다
+    print(token_json)
+
+    access_token = token_json.get("access_token")
+
+    # 이 토큰이 제대로 된 토큰이 맞는지 카카오에게 검증을 해보자
+    profile_request = requests.get(
+    "https://kapi.kakao.com/v2/user/me", headers={"Authorization" : f"Bearer {access_token}"},)
+
+
+    profile_json = profile_request.json()
+
+    kakao_account = profile_json.get("kakao_account")
+    email = kakao_account.get("email", None)
+    kakao_id = profile_json.get("id")
+
+
+
+    session['user_id'] = kakao_id
+    session['nickname'] = kakao_account['profile']['nickname']
+
+    return redirect('/')
+
