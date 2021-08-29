@@ -1,0 +1,253 @@
+{
+  "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903",
+  "name": "CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903",
+  "type": "Microsoft.Resources/deployments",
+  "tags": {
+    "primaryResourceId": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourcegroups/covid-map_group/providers/Microsoft.Compute/virtualMachines/covid-map",
+    "marketplaceItemId": "Microsoft.VirtualMachine",
+    "provisioningHash": "SolutionProvider"
+  },
+  "properties": {
+    "templateHash": "10551669332657639823",
+    "parameters": {
+      "location": {
+        "type": "String",
+        "value": "eastus"
+      },
+      "networkInterfaceName": {
+        "type": "String",
+        "value": "covid-map398"
+      },
+      "enableAcceleratedNetworking": {
+        "type": "Bool",
+        "value": true
+      },
+      "networkSecurityGroupName": {
+        "type": "String",
+        "value": "covid-map-nsg"
+      },
+      "networkSecurityGroupRules": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "SSH",
+            "properties": {
+              "priority": 300,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "22"
+            }
+          },
+          {
+            "name": "HTTP",
+            "properties": {
+              "priority": 320,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "80"
+            }
+          },
+          {
+            "name": "HTTPS",
+            "properties": {
+              "priority": 340,
+              "protocol": "TCP",
+              "access": "Allow",
+              "direction": "Inbound",
+              "sourceAddressPrefix": "*",
+              "sourcePortRange": "*",
+              "destinationAddressPrefix": "*",
+              "destinationPortRange": "443"
+            }
+          }
+        ]
+      },
+      "subnetName": {
+        "type": "String",
+        "value": "default"
+      },
+      "virtualNetworkName": {
+        "type": "String",
+        "value": "covid-map_group-vnet"
+      },
+      "addressPrefixes": {
+        "type": "Array",
+        "value": [
+          "10.1.0.0/16"
+        ]
+      },
+      "subnets": {
+        "type": "Array",
+        "value": [
+          {
+            "name": "default",
+            "properties": {
+              "addressPrefix": "10.1.0.0/24"
+            }
+          }
+        ]
+      },
+      "publicIpAddressName": {
+        "type": "String",
+        "value": "covid-map-ip"
+      },
+      "publicIpAddressType": {
+        "type": "String",
+        "value": "Static"
+      },
+      "publicIpAddressSku": {
+        "type": "String",
+        "value": "Standard"
+      },
+      "virtualMachineName": {
+        "type": "String",
+        "value": "covid-map"
+      },
+      "virtualMachineComputerName": {
+        "type": "String",
+        "value": "covid-map"
+      },
+      "virtualMachineRG": {
+        "type": "String",
+        "value": "covid-map_group"
+      },
+      "osDiskType": {
+        "type": "String",
+        "value": "Premium_LRS"
+      },
+      "virtualMachineSize": {
+        "type": "String",
+        "value": "Standard_D2s_v3"
+      },
+      "adminUsername": {
+        "type": "String",
+        "value": "azureuser"
+      },
+      "adminPublicKey": {
+        "type": "SecureString"
+      },
+      "zone": {
+        "type": "String",
+        "value": "1"
+      }
+    },
+    "mode": "Incremental",
+    "debugSetting": {
+      "detailLevel": "None"
+    },
+    "provisioningState": "Succeeded",
+    "timestamp": "2021-08-13T08:12:10.7282963Z",
+    "duration": "PT53.197964S",
+    "correlationId": "429c677f-2042-4a2c-a9b3-dff4cf2de8ad",
+    "providers": [
+      {
+        "namespace": "Microsoft.Network",
+        "resourceTypes": [
+          {
+            "resourceType": "networkInterfaces",
+            "locations": [
+              "eastus"
+            ]
+          },
+          {
+            "resourceType": "networkSecurityGroups",
+            "locations": [
+              "eastus"
+            ]
+          },
+          {
+            "resourceType": "virtualNetworks",
+            "locations": [
+              "eastus"
+            ]
+          },
+          {
+            "resourceType": "publicIpAddresses",
+            "locations": [
+              "eastus"
+            ]
+          }
+        ]
+      },
+      {
+        "namespace": "Microsoft.Compute",
+        "resourceTypes": [
+          {
+            "resourceType": "virtualMachines",
+            "locations": [
+              "eastus"
+            ]
+          }
+        ]
+      }
+    ],
+    "dependencies": [
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkSecurityGroups/covid-map-nsg",
+            "resourceType": "Microsoft.Network/networkSecurityGroups",
+            "resourceName": "covid-map-nsg"
+          },
+          {
+            "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/virtualNetworks/covid-map_group-vnet",
+            "resourceType": "Microsoft.Network/virtualNetworks",
+            "resourceName": "covid-map_group-vnet"
+          },
+          {
+            "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/publicIpAddresses/covid-map-ip",
+            "resourceType": "Microsoft.Network/publicIpAddresses",
+            "resourceName": "covid-map-ip"
+          }
+        ],
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkInterfaces/covid-map398",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "covid-map398"
+      },
+      {
+        "dependsOn": [
+          {
+            "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkInterfaces/covid-map398",
+            "resourceType": "Microsoft.Network/networkInterfaces",
+            "resourceName": "covid-map398"
+          }
+        ],
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Compute/virtualMachines/covid-map",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "covid-map"
+      }
+    ],
+    "outputs": {
+      "adminUsername": {
+        "type": "String",
+        "value": "azureuser"
+      }
+    },
+    "outputResources": [
+      {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Compute/virtualMachines/covid-map"
+      },
+      {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkInterfaces/covid-map398"
+      },
+      {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkSecurityGroups/covid-map-nsg"
+      },
+      {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/publicIpAddresses/covid-map-ip"
+      },
+      {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/virtualNetworks/covid-map_group-vnet"
+      }
+    ],
+    "validationLevel": "Template"
+  }
+}

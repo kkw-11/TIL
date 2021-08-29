@@ -1,0 +1,104 @@
+[
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/350EA41515F20CF6",
+    "operationId": "350EA41515F20CF6",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:12:10.5827477Z",
+      "duration": "PT39.9748144S",
+      "trackingId": "11a6435d-c17c-4db2-b27e-9ac32be833c3",
+      "serviceRequestId": "dd9a7a7c-3087-4da3-9c84-7ee032c46f25",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Compute/virtualMachines/covid-map",
+        "resourceType": "Microsoft.Compute/virtualMachines",
+        "resourceName": "covid-map"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/BD2D1749D12502DD",
+    "operationId": "BD2D1749D12502DD",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:11:36.4877387Z",
+      "duration": "PT5.8798054S",
+      "trackingId": "eb747cbc-7b2f-4d48-996d-4175dae79a8a",
+      "serviceRequestId": "a98c4077-e7a8-4a18-b4ef-d5a37ff0ad03",
+      "statusCode": "Created",
+      "targetResource": {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkInterfaces/covid-map398",
+        "resourceType": "Microsoft.Network/networkInterfaces",
+        "resourceName": "covid-map398"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/7F794AB6B5C736C4",
+    "operationId": "7F794AB6B5C736C4",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:11:29.6291226Z",
+      "duration": "PT8.5057156S",
+      "trackingId": "5ab1b438-39bc-48d7-b859-aa93989d5022",
+      "serviceRequestId": "a6c1c5a2-03ca-4aee-a908-321fe579efd5",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/publicIpAddresses/covid-map-ip",
+        "resourceType": "Microsoft.Network/publicIpAddresses",
+        "resourceName": "covid-map-ip"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/94903EB3B3446DF8",
+    "operationId": "94903EB3B3446DF8",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:11:30.5664846Z",
+      "duration": "PT9.4430776S",
+      "trackingId": "0bfb72dd-31b8-4bcf-9216-e6dd08a93490",
+      "serviceRequestId": "e6dbbc64-c156-411d-98cc-047abe718964",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/virtualNetworks/covid-map_group-vnet",
+        "resourceType": "Microsoft.Network/virtualNetworks",
+        "resourceName": "covid-map_group-vnet"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/2BAFE825CB96C4F6",
+    "operationId": "2BAFE825CB96C4F6",
+    "properties": {
+      "provisioningOperation": "Create",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:11:29.7241327Z",
+      "duration": "PT8.6007257S",
+      "trackingId": "767b08a4-a3b9-45f2-8293-3df734345bbf",
+      "serviceRequestId": "bc067328-045c-420c-a8ad-72145d6d96ca",
+      "statusCode": "OK",
+      "targetResource": {
+        "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Network/networkSecurityGroups/covid-map-nsg",
+        "resourceType": "Microsoft.Network/networkSecurityGroups",
+        "resourceName": "covid-map-nsg"
+      }
+    }
+  },
+  {
+    "id": "/subscriptions/91e098a6-4f49-4cd3-b3a0-4578015b5865/resourceGroups/covid-map_group/providers/Microsoft.Resources/deployments/CreateVm-canonical.0001-com-ubuntu-server-focal-2-20210813170903/operations/08585727646079473459",
+    "operationId": "08585727646079473459",
+    "properties": {
+      "provisioningOperation": "EvaluateDeploymentOutput",
+      "provisioningState": "Succeeded",
+      "timestamp": "2021-08-13T08:12:10.7038532Z",
+      "duration": "PT40.0959199S",
+      "trackingId": "7d789a4e-d327-47f0-a06d-5d83423db94f",
+      "statusCode": "OK"
+    }
+  }
+]
