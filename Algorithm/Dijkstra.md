@@ -29,6 +29,8 @@
 ![image](https://user-images.githubusercontent.com/76929823/131434024-5738b388-ca76-4d15-8dc1-00440acf0a99.png)
 
 5. 이제 방문하지 않고 가장 짧은 노드인 2번 노드를 선택하고 2번노드를 거쳐 이동 가능하고 방문하지 않은 노드가 없으므로 알고리즘을 종료한다.
+![image](https://user-images.githubusercontent.com/76929823/131434227-a211cdcc-f1dc-46a2-8518-261535e98e8f.png)
+
 
 6. 이렇게 최종 적으로 구해진 1번 노드부터 나머지 노드까지 이동가능한 최단 경로는 다음과 같다.
 ![image](https://user-images.githubusercontent.com/76929823/131434180-81cab8f8-03a7-40ea-b121-b3c52b768215.png)
