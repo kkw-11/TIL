@@ -1,5 +1,4 @@
-words = ["hot", "dot", "dog", "lot", "log", "cog"]
+accounts = {"kim":("kiwon","kkw"),"yang":"yangji","han":"h013"}
 
-for i in range(len(words)) :
-    wd = "hit"
-    print([j for j in range(len(words[i])) if words[i][j] != wd[j]])
+for user_name, user_id in accounts.items():
+    print(user_name, user_id)
