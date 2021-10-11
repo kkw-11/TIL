@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/menu" method="get">
+        메뉴 : <input type="text" name="input_menu" placeholder="메뉴를 입력하세요"><br>
+        가격 <input type="radio" name="gender" value="male">
+        평점 <input type="radio" name="gender" value="female"><br>
+        <input type="submit" value="제출">
+    </form>
+    {% for test in test_list %}
+    {{test.restaurant_name}}, {{test.hygiene_level}},  {{test.menu_main_category}}, {{test.grade}}
+    <br/>
+    {% endfor %}
+</body>
+</html>
