@@ -10,33 +10,54 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-def csv_read(src_file):
 
-    books = []
+
+def csv_read(src_file):
+    options = webdriver.ChromeOptions()
+    options.headless = True
+    options.add_argument("window-size=1920x1080")
+    options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36")
+
+
+    data = {}
 
     with open(src_file,"r", encoding='EUC-KR') as src:
         reader = csv.reader(src)
 
         for row in reader:
-            _input = row[4]
-            print(_input)
-            url = f"https://map.naver.com/v5/search/{_input}"
-            driver = webdriver.Chrome("./chromedriver")
+            url = f"https://map.naver.com/v5/search/{row[0]}"
+            
+            driver = webdriver.Chrome(options=options)
+            driver.maximize_window()
             driver.get(url)
 
             #첫 Iframe 이동
             frame_elem = driver.find_element_by_id("searchIframe")
             driver.switch_to_frame(frame_elem)
-            elem = driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/div[1]/a[1]/div[2]/div')
+            try:
+                elem2 = driver.find_element_by_xpath('//*[@id="_pcmap_list_scroll_container"]/ul/li/div[1]/a/div[2]/span[1]') # searchIframe에 있는 별점 xpath
+                data[row[0]] = elem2.text
+                print("평점:",elem2.text)
+                print(data)
+                if row[0] == "이디야 시아테마파크점":
+                    break
+            except:
+                try:
+                    elem2 = driver.find_element_by_xpath('//*[@id="_pcmap_list_scroll_container"]/ul/li[1]/div[1]/a/div[2]/span[1]')
+                    data[row[0]] = elem2.text
+                    print("평점:",elem2.text)
+                    if row[0] == "이디야 시아테마파크점":
+                        break
+                except:
+                    continue
+    return data
 
-            # print(elem.text)
-            #별점
-            elem2 = driver.find_element_by_xpath('/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/div[1]/a[2]/div/span[1]/em')
-            print(elem2.text)
-            elem3 = driver.find_element_by_xpath('//*[@id="baseMap"]/div[1]/div/div[1]/div[3]/div[2]/div[1]/salt-marker/div/button')
-
-            elem.click()
 
 
-src_file = 'team.csv'
-csv_read(src_file)
+src_file = "crawling_data.csv"
+data = csv_read(src_file)
+
+print(data)
+
+with open('./test.json', 'w', encoding='utf-8') as make_file:
+    json.dump(data, make_file, indent="\t")
