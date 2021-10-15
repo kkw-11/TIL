@@ -10,14 +10,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-
-
 def csv_read(src_file):
     options = webdriver.ChromeOptions()
     options.headless = True
     options.add_argument("window-size=1920x1080")
     options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36")
-
 
     data = {}
 
@@ -51,8 +48,6 @@ def csv_read(src_file):
                 except:
                     continue
     return data
-
-
 
 src_file = "crawling_data.csv"
 data = csv_read(src_file)

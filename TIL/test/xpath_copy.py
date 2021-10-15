@@ -12,6 +12,7 @@ url = f"https://m.map.naver.com/search2/search.naver?query={_input}"
 res = requests.get(url)
 
 soup = BeautifulSoup(res.text,"html.parser")
+print(soup)
 import re
 shop_ids = re.findall(r's(\d*)', str(soup))
 

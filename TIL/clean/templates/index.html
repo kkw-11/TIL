@@ -6,15 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="/menu" method="get">
         메뉴 : <input type="text" name="input_menu" placeholder="메뉴를 입력하세요"><br>
-        가격 <input type="radio" name="gender" value="male">
-        평점 <input type="radio" name="gender" value="female"><br>
+        가격 <input type="radio" name="gender" value="money">
         <input type="submit" value="제출">
+    </form><br/>
+
+    <form action="/allList" method="get">
+        <input type="submit" value="전체가게">
     </form>
+
+    <form action="/franchiseList" method="get">
+        <input type="submit" value="프렌차이즈">
+    </form>
+
+    
+    <!-- <button action onclick="알림창열기('block')">전체 가게(프렌차이즈 포함)</button>
+    <button>일반가게 </button> -->
+
+    <script>
+        function 알림창열기(구멍){
+            console.log("hello")
+        }
+
+    </script>
     {% for test in test_list %}
-    {{test.restaurant_name}}, {{test.hygiene_level}},  {{test.menu_main_category}}, {{test.grade}}
+    {{test.bssh_nm}}
     <br/>
     {% endfor %}
 </body>
