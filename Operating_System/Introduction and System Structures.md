@@ -42,7 +42,6 @@
 ## 리눅스의 새로운 프로세스를 생성하는 함수
 * fork(), clone() - 커널안에 존재하는 함수
 
-
 ## CPU mode 2가지
 * User mode, Kenel mode
 
