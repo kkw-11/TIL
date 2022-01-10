@@ -52,3 +52,13 @@ x3 = dict([('health',490),('mana',334),('melee',550),('armor',18.72)])
 ```python
 x4 = dict({'health':490,'mana':334,'melee':550,'armor':18.72})
 ```
+
+## key 값으로 value 접근하기
+
+get(key)과 \[key\]를 통해 value에 접근할 수 있다. 이때 get과 \[\]의 차이는 get은 key값이 없을 경우 None을 리턴하지만 \[\]은 key값이 없을 경우 에러가 발생한다.
+
+```
+menu = {"ham" : 1, "cucumber" : -12, "egg" : 100}
+print(menu.get("ham")) #1
+print(menu["ham"])
+```
